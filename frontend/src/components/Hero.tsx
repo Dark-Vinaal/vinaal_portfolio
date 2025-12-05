@@ -1,63 +1,7 @@
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useRef, useMemo, useState, useEffect } from 'react';
-import { Points, PointMaterial, Float } from '@react-three/drei';
-import * as random from 'maath/random/dist/maath-random.esm';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail, MapPin, Clock } from 'lucide-react';
-
-// Animated particles with red and purple colors
-function Particles({ count = 5000, color = '#a855f7' }: { count?: number; color?: string }) {
-  const ref = useRef<any>(null);
-  const sphere = useMemo(() => random.inSphere(new Float32Array(count * 3), { radius: 1.5 }) as Float32Array, [count]);
-
-  useFrame((_, delta) => {
-    if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
-    }
-  });
-
-  return (
-    <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
-        <PointMaterial
-          transparent
-          color={color}
-          size={0.004}
-          sizeAttenuation={true}
-          depthWrite={false}
-          opacity={0.8}
-        />
-      </Points>
-    </group>
-  );
-}
-
-// Floating geometric shapes
-function FloatingShapes() {
-  return (
-    <>
-      <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-        <mesh position={[-2, 1, -2]}>
-          <octahedronGeometry args={[0.3]} />
-          <meshBasicMaterial color="#ef4444" wireframe />
-        </mesh>
-      </Float>
-      <Float speed={1.5} rotationIntensity={0.8} floatIntensity={1.5}>
-        <mesh position={[2, -1, -1]}>
-          <icosahedronGeometry args={[0.25]} />
-          <meshBasicMaterial color="#a855f7" wireframe />
-        </mesh>
-      </Float>
-      <Float speed={1.8} rotationIntensity={1.2} floatIntensity={1.8}>
-        <mesh position={[1.5, 1.5, -3]}>
-          <torusGeometry args={[0.2, 0.08, 8, 16]} />
-          <meshBasicMaterial color="#ef4444" wireframe />
-        </mesh>
-      </Float>
-    </>
-  );
-}
+import LaserFlow from './LaserFlow';
 
 // Clock component for Trichirapalli time
 function LocalClock() {
@@ -109,19 +53,21 @@ function LocalClock() {
 export default function Hero() {
   return (
     <section id="home" className="min-h-screen w-full relative bg-black overflow-hidden flex items-center justify-center">
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-transparent to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-r from-red-900/10 via-transparent to-purple-900/10 pointer-events-none" />
-
-      {/* 3D Canvas */}
+      {/* LaserFlow Background */}
       <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 1] }}>
-          <ambientLight intensity={0.5} />
-          <Particles color="#a855f7" count={3000} />
-          <Particles color="#ef4444" count={2000} />
-          <FloatingShapes />
-        </Canvas>
+        <LaserFlow
+          horizontalBeamOffset={0.0}
+          verticalBeamOffset={-0.2}
+          color="#a855f7"
+          fogIntensity={0.5}
+          wispDensity={1.2}
+          verticalSizing={2.5}
+          horizontalSizing={0.6}
+        />
       </div>
+
+      {/* Gradient overlays for depth */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 pointer-events-none z-[1]" />
 
       {/* Content */}
       <div className="z-10 text-center px-6 max-w-4xl mx-auto">
@@ -211,7 +157,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
