@@ -32,8 +32,7 @@ export default function Navbar() {
         <div className="container mx-auto px-6 flex justify-between items-center">
           {/* Logo */}
           <a href="#home" className="text-2xl font-bold tracking-tighter">
-            <span className="text-gradient">JD</span>
-            <span className="text-white">.</span>
+            <span className="text-gradient">Vinaal</span>
           </a>
 
           {/* Desktop Navigation */}

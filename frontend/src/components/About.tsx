@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Code, Palette, Server, Brain } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 export default function About() {
     const highlights = [
@@ -36,21 +37,34 @@ export default function About() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
                     >
-                        <div className="space-y-6 text-zinc-400 leading-relaxed">
-                            <p className="text-lg">
-                                Hello! I'm <span className="text-white font-semibold">John Doe</span>, a Full Stack Developer based in
-                                <span className="text-purple-400"> Trichirapalli, Tamil Nadu, India</span>. I specialize in building
-                                exceptional digital experiences that live on the internet.
-                            </p>
-                            <p>
-                                With over 3 years of experience in software development, I've worked on a diverse range of projects
-                                from e-commerce platforms to real-time collaboration tools. My passion lies in creating clean,
-                                efficient code and designing intuitive user interfaces.
-                            </p>
-                            <p>
-                                When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects,
-                                or sharing knowledge with the developer community.
-                            </p>
+                        <div className="space-y-2 text-zinc-400 leading-relaxed">
+                            <ScrollReveal
+                                baseOpacity={0}
+                                enableBlur={true}
+                                baseRotation={5}
+                                blurStrength={10}
+                                textClassName="text-zinc-300"
+                            >
+                                🧑‍🎓 I am a Computer Science undergraduate with a strong foundation in programming and problem-solving. I enjoy building responsive and user-friendly websites and applications, with a particular interest in Full Stack Web Development. I take pride in writing clean, maintainable code and creating smooth user experiences.
+                            </ScrollReveal>
+                            <ScrollReveal
+                                baseOpacity={0}
+                                enableBlur={true}
+                                baseRotation={5}
+                                blurStrength={10}
+                                textClassName="text-zinc-300"
+                            >
+                                🚀 I am constantly exploring new tools, frameworks, and best practices to expand my skills and stay up to date with evolving technologies. My goal is to contribute to impactful projects and grow into a well-rounded Web Developer & Software Developer.
+                            </ScrollReveal>
+                            <ScrollReveal
+                                baseOpacity={0}
+                                enableBlur={true}
+                                baseRotation={5}
+                                blurStrength={10}
+                                textClassName="text-zinc-300"
+                            >
+                                🚀 I am always eager to learn new technologies and tools, including experimenting with AI-driven solutions. Beyond academics, my passion for gaming has played a key role in sparking my interest in technology, laptops, and eventually coding, which continues to inspire my journey in software development.
+                            </ScrollReveal>
                         </div>
 
                         <motion.div

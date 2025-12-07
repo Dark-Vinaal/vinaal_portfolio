@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, MapPin, Clock, Calendar, Sun } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Clock, Calendar, Sun, ExternalLink } from 'lucide-react';
 import LaserFlow from './LaserFlow';
 
 // Hidden reveal element with smooth, cool purplish effects
@@ -248,7 +248,7 @@ export default function Hero() {
                 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-tight"
               >
                 Hi, I'm{' '}
-                <span className="text-gradient">John Doe</span>
+                <span className="text-gradient">Vinaal R</span>
               </motion.h1>
 
               <motion.p
@@ -268,14 +268,16 @@ export default function Hero() {
                 className="flex gap-4 mb-8"
               >
                 {[
-                  { icon: Github, href: '#', label: 'GitHub' },
-                  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                  { icon: Twitter, href: '#', label: 'Twitter' },
-                  { icon: Mail, href: '#contact', label: 'Email' },
+                  { icon: Github, href: 'https://github.com/Dark-Vinaal', label: 'GitHub' },
+                  { icon: Linkedin, href: 'https://www.linkedin.com/in/vinaal', label: 'LinkedIn' },
+                  { icon: ExternalLink, href: 'https://linktr.ee/Darkxzz999', label: 'Linktree' },
+                  { icon: Mail, href: 'mailto:vinaalm898@gmail.com', label: 'Email' },
                 ].map(({ icon: Icon, href, label }) => (
                   <a
                     key={label}
                     href={href}
+                    target={href.startsWith('mailto:') ? undefined : '_blank'}
+                    rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                     aria-label={label}
                     className="p-3 rounded-full glass hover:glow-purple transition-all duration-300 hover:scale-110 text-zinc-400 hover:text-white"
                   >

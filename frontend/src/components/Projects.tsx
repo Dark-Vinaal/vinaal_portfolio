@@ -1,39 +1,39 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, ShoppingCart, BookOpen, Briefcase } from 'lucide-react';
+import { ExternalLink, Github, Smartphone, Layout, Calculator } from 'lucide-react';
 
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A modern, full-featured online store with shopping cart, user authentication, payment integration, and admin dashboard. Built with scalability in mind.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    icon: ShoppingCart,
-    github: '#',
-    live: '#',
-    color: 'from-red-500 to-orange-500',
+    title: 'Techy Zone',
+    description: 'A comprehensive tech resource hub featuring curated links to AI tools, development resources, design assets, cloud storage, cybersecurity tools, and more. Built as a one-stop solution for developers and tech enthusiasts.',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Netlify'],
+    icon: Layout,
+    github: 'https://github.com/Dark-Vinaal',
+    live: 'https://techyzone.netlify.app/',
+    color: 'from-purple-500 to-blue-500',
   },
   {
     id: 2,
-    title: 'Blogging Platform',
-    description: 'A content management system with rich text editing, categories, tags, and SEO optimization. Features user roles and comment moderation.',
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop',
-    tech: ['Next.js', 'PostgreSQL', 'Tailwind', 'Prisma'],
-    icon: BookOpen,
-    github: '#',
-    live: '#',
-    color: 'from-purple-500 to-pink-500',
+    title: 'Mobile SmartZ',
+    description: 'A sleek e-commerce platform for premium smartphones featuring product showcases, responsive design, and smooth navigation. Displays flagship devices from Apple, Samsung, Google, and Nothing with pricing and features.',
+    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=400&fit=crop',
+    tech: ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
+    icon: Smartphone,
+    github: 'https://github.com/Dark-Vinaal/E-commerce-site-bootstrap',
+    live: 'https://dark-vinaal.github.io/E-commerce-site-bootstrap/',
+    color: 'from-red-500 to-orange-500',
   },
   {
     id: 3,
-    title: 'Portfolio Website',
-    description: 'A sleek, animated portfolio website showcasing projects and skills. Features 3D elements, smooth animations, and a contact form.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-    tech: ['React', 'Three.js', 'Framer Motion', 'Django'],
-    icon: Briefcase,
-    github: '#',
-    live: '#',
-    color: 'from-blue-500 to-cyan-500',
+    title: 'Modern Calculator',
+    description: 'A beautiful, responsive calculator with dual theme support for dark and light backgrounds. Features clean UI design, smooth animations, and all essential mathematical operations.',
+    image: 'https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    icon: Calculator,
+    github: 'https://github.com/Dark-Vinaal/Calculator-JS',
+    live: 'https://dark-vinaal.github.io/Calculator-JS/',
+    color: 'from-green-500 to-teal-500',
   },
 ];
 
@@ -55,8 +55,8 @@ export default function Projects() {
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <p className="text-zinc-400 max-w-2xl mx-auto">
-            A selection of projects that showcase my skills in full-stack development,
-            from concept to deployment.
+            A selection of projects that showcase my skills in web development,
+            from responsive designs to fully functional applications.
           </p>
         </motion.div>
 
@@ -110,6 +110,8 @@ export default function Projects() {
                 <div className="flex gap-4">
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors"
                   >
                     <Github size={16} />
@@ -117,6 +119,8 @@ export default function Projects() {
                   </a>
                   <a
                     href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors"
                   >
                     <ExternalLink size={16} />
@@ -140,7 +144,9 @@ export default function Projects() {
           className="text-center mt-12"
         >
           <a
-            href="#"
+            href="https://github.com/Dark-Vinaal?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass text-white font-medium hover:bg-white/10 transition-all"
           >
             View All Projects

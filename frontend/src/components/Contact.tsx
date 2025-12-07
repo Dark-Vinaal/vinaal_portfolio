@@ -1,18 +1,17 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Send, Github, Linkedin, Twitter, MapPin, Phone, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Send, Github, Linkedin, MapPin, CheckCircle, AlertCircle, ExternalLink } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Github, label: 'GitHub', href: 'https://github.com', color: 'hover:text-white' },
-  { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com', color: 'hover:text-blue-400' },
-  { icon: Twitter, label: 'Twitter', href: 'https://twitter.com', color: 'hover:text-sky-400' },
-  { icon: Mail, label: 'Email', href: 'mailto:contact@example.com', color: 'hover:text-red-400' },
+  { icon: Github, label: 'GitHub', href: 'https://github.com/Dark-Vinaal', color: 'hover:text-white' },
+  { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/vinaal', color: 'hover:text-blue-400' },
+  { icon: ExternalLink, label: 'Linktree', href: 'https://linktr.ee/Darkxzz999', color: 'hover:text-green-400' },
+  { icon: Mail, label: 'Email', href: 'mailto:vinaalm898@gmail.com', color: 'hover:text-red-400' },
 ];
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'johndoe@example.com' },
-  { icon: Phone, label: 'Phone', value: '+91 98765 43210' },
-  { icon: MapPin, label: 'Location', value: 'Trichirapalli, Tamil Nadu, India' },
+  { icon: Mail, label: 'Email', value: 'vinaalm898@gmail.com' },
+  { icon: MapPin, label: 'Location', value: 'Tiruchirappalli, Tamil Nadu, India' },
 ];
 
 export default function Contact() {
@@ -110,7 +109,7 @@ export default function Contact() {
                   "I believe that great products are built through collaboration and open communication.
                   Let's create something amazing together!"
                 </p>
-                <p className="mt-4 text-white font-semibold">— John Doe</p>
+                <p className="mt-4 text-white font-semibold">— Vinaal R</p>
               </div>
             </div>
           </motion.div>
