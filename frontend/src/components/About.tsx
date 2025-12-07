@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Code, Palette, Server, Brain } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import StarBorder from './StarBorder';
 
 export default function About() {
     const highlights = [
@@ -80,12 +81,14 @@ export default function About() {
                             >
                                 Let's Connect
                             </a>
-                            <a
+                            <StarBorder
+                                as="a"
                                 href="#"
-                                className="px-6 py-3 rounded-lg border border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:text-white transition-all"
+                                color="cyan"
+                                speed="5s"
                             >
                                 Download CV
-                            </a>
+                            </StarBorder>
                         </motion.div>
                     </motion.div>
 

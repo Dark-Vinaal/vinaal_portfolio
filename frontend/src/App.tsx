@@ -5,6 +5,7 @@ import Skills from './components/Skills';
 import MoreAboutMe from './components/MoreAboutMe';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import LetsConnect from './components/LetsConnect';
 import Footer from './components/Footer';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <MoreAboutMe />
         <Projects />
         <Contact />
+        <LetsConnect />
       </main>
       <Footer />
     </div>

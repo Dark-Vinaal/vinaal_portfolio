@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Smartphone, Layout, Calculator } from 'lucide-react';
+import Magnet from './Magnet';
 
 const projects = [
   {
@@ -9,7 +10,7 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
     tech: ['HTML', 'CSS', 'JavaScript', 'Netlify'],
     icon: Layout,
-    github: 'https://github.com/Dark-Vinaal',
+    github: 'https://github.com/Dark-Vinaal?tab=repositories',
     live: 'https://techyzone.netlify.app/',
     color: 'from-purple-500 to-blue-500',
   },
@@ -109,6 +110,15 @@ export default function Projects() {
                 {/* Links */}
                 <div className="flex gap-4">
                   <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors"
+                  >
+                    <ExternalLink size={16} />
+                    <span>View</span>
+                  </a>
+                  <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -116,15 +126,6 @@ export default function Projects() {
                   >
                     <Github size={16} />
                     <span>Code</span>
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors"
-                  >
-                    <ExternalLink size={16} />
-                    <span>Live Demo</span>
                   </a>
                 </div>
               </div>
@@ -143,15 +144,69 @@ export default function Projects() {
           transition={{ delay: 0.5 }}
           className="text-center mt-12"
         >
-          <a
-            href="https://github.com/Dark-Vinaal?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass text-white font-medium hover:bg-white/10 transition-all"
-          >
-            View All Projects
-            <ExternalLink size={16} />
-          </a>
+          <style>{`
+            .view-all-btn {
+              position: relative;
+              display: inline-flex;
+              align-items: center;
+              gap: 10px;
+              padding: 16px 32px;
+              border-radius: 50px;
+              background: linear-gradient(135deg, #6a11cb 0%, #2575fc 50%, #6a11cb 100%);
+              background-size: 200% 200%;
+              color: white;
+              font-weight: 600;
+              font-size: 16px;
+              text-decoration: none;
+              box-shadow: 0 4px 20px rgba(106, 17, 203, 0.4), 0 0 40px rgba(37, 117, 252, 0.2);
+              transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+              overflow: hidden;
+            }
+            
+            .view-all-btn::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: -100%;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+              transition: left 0.5s ease;
+            }
+            
+            .view-all-btn:hover {
+              transform: scale(1.05);
+              box-shadow: 0 8px 40px rgba(106, 17, 203, 0.6), 0 0 60px rgba(37, 117, 252, 0.4);
+              background-position: 100% 0;
+            }
+            
+            .view-all-btn:hover::before {
+              left: 100%;
+            }
+            
+            .view-all-btn:active {
+              transform: scale(0.98);
+            }
+            
+            .view-all-btn .icon {
+              transition: transform 0.3s ease;
+            }
+            
+            .view-all-btn:hover .icon {
+              transform: translateX(4px);
+            }
+          `}</style>
+          <Magnet padding={50} disabled={false} magnetStrength={50}>
+            <a
+              href="https://github.com/Dark-Vinaal?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="view-all-btn"
+            >
+              View All Projects
+              <ExternalLink size={18} className="icon" />
+            </a>
+          </Magnet>
         </motion.div>
       </div>
     </section>

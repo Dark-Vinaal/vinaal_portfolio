@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin, Clock, Calendar, Sun, ExternalLink } from 'lucide-react';
 import LaserFlow from './LaserFlow';
+import StarBorder from './StarBorder';
 
 // Hidden reveal element with smooth, cool purplish effects
 function HiddenRevealElement({
@@ -299,12 +300,14 @@ export default function Hero() {
                 >
                   View My Work →
                 </a>
-                <a
+                <StarBorder
+                  as="a"
                   href="#contact"
-                  className="px-8 py-4 rounded-full glass text-white font-semibold hover:bg-white/10 transition-all duration-300"
+                  color="cyan"
+                  speed="5s"
                 >
                   Get in Touch
-                </a>
+                </StarBorder>
               </motion.div>
             </div>
 
