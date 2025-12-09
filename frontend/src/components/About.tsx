@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { Code, Palette, Server, Brain } from 'lucide-react';
+import { Code, Palette, Server, Brain, ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import StarBorder from './StarBorder';
+import ShinyButton from './ShinyButton';
 
 export default function About() {
     const highlights = [
@@ -75,12 +76,12 @@ export default function About() {
                             transition={{ delay: 0.4 }}
                             className="mt-8 flex flex-wrap gap-4"
                         >
-                            <a
+                            <ShinyButton
                                 href="#contact"
-                                className="px-6 py-3 rounded-lg bg-gradient-to-r from-red-500 to-purple-500 text-white font-medium hover:opacity-90 transition-all"
+                                icon={<ArrowRight size={20} />}
                             >
                                 Let's Connect
-                            </a>
+                            </ShinyButton>
                             <StarBorder
                                 as="a"
                                 href="#"

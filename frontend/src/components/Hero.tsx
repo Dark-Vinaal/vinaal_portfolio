@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Mail, MapPin, Clock, Calendar, Sun, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Clock, Calendar, Sun, ExternalLink, ArrowRight } from 'lucide-react';
 import LaserFlow from './LaserFlow';
 import StarBorder from './StarBorder';
+import ShinyButton from './ShinyButton';
 
 // Hidden reveal element with smooth, cool purplish effects
 function HiddenRevealElement({
@@ -103,10 +104,10 @@ function LiveTime() {
       >
         {time.toLocaleTimeString('en-IN', {
           timeZone: 'Asia/Kolkata',
-          hour: '2-digit',
+          hour: 'numeric',
           minute: '2-digit',
           second: '2-digit',
-          hour12: false,
+          hour12: true,
         })}
       </motion.span>
     </motion.div>
@@ -294,12 +295,12 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="flex flex-wrap gap-4"
               >
-                <a
+                <ShinyButton
                   href="#projects"
-                  className="px-8 py-4 rounded-full bg-gradient-to-r from-red-500 to-purple-500 text-white font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 glow-gradient"
+                  icon={<ArrowRight size={20} />}
                 >
-                  View My Work →
-                </a>
+                  View My Work
+                </ShinyButton>
                 <StarBorder
                   as="a"
                   href="#contact"

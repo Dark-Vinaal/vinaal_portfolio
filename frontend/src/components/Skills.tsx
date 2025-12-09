@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
 import {
   SiReact, SiNodedotjs, SiTypescript, SiJavascript,
-  SiHtml5, SiCss3, SiMongodb, SiPostgresql,
-  SiGit, SiDocker, SiFigma, SiNextdotjs,
-  SiTailwindcss, SiPython, SiDjango, SiExpress
+  SiHtml5, SiCss3, SiPostgresql,
+  SiGit, SiDocker,
+  SiTailwindcss, SiPython,
+  SiCplusplus, SiC, SiFlask, SiBootstrap, SiMysql, SiGithub, SiCanva
 } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
+import { Cpu, Binary, Layers, Box, Network } from 'lucide-react';
 import ElectricBorder from './ElectricBorder';
 
 const skillCategories = [
@@ -12,34 +15,55 @@ const skillCategories = [
     category: 'Frontend Development',
     color: '#ef4444',
     skills: [
-      { name: 'React', icon: SiReact, level: 90 },
-      { name: 'Next.js', icon: SiNextdotjs, level: 85 },
-      { name: 'TypeScript', icon: SiTypescript, level: 88 },
-      { name: 'JavaScript', icon: SiJavascript, level: 95 },
+      { name: 'React.js', icon: SiReact, level: 90 },
       { name: 'HTML5', icon: SiHtml5, level: 95 },
       { name: 'CSS3', icon: SiCss3, level: 92 },
-      { name: 'Tailwind CSS', icon: SiTailwindcss, level: 90 },
+      { name: 'JavaScript', icon: SiJavascript, level: 95 },
+      { name: 'TypeScript', icon: SiTypescript, level: 88 },
+      { name: 'Bootstrap', icon: SiBootstrap, level: 85 },
+      { name: 'Tailwind', icon: SiTailwindcss, level: 90 },
     ],
   },
   {
     category: 'Backend Development',
     color: '#a855f7',
     skills: [
+      { name: 'Python', icon: SiPython, level: 90 },
+      { name: 'Java', icon: FaJava, level: 85 },
+      { name: 'C++', icon: SiCplusplus, level: 80 },
+      { name: 'C', icon: SiC, level: 85 },
       { name: 'Node.js', icon: SiNodedotjs, level: 88 },
-      { name: 'Express.js', icon: SiExpress, level: 85 },
-      { name: 'Python', icon: SiPython, level: 82 },
-      { name: 'Django', icon: SiDjango, level: 78 },
-      { name: 'MongoDB', icon: SiMongodb, level: 85 },
-      { name: 'PostgreSQL', icon: SiPostgresql, level: 80 },
+      { name: 'Flask', icon: SiFlask, level: 82 },
     ],
   },
   {
-    category: 'Tools & Design',
+    category: 'Database & Cloud',
+    color: '#22c55e',
+    skills: [
+      { name: 'SQL', icon: SiPostgresql, level: 85 },
+      { name: 'MySQL', icon: SiMysql, level: 85 },
+      { name: 'GitHub', icon: SiGithub, level: 90 },
+      { name: 'DockerHub', icon: SiDocker, level: 75 },
+    ],
+  },
+  {
+    category: 'Tools & Others',
     color: '#06b6d4',
     skills: [
       { name: 'Git', icon: SiGit, level: 90 },
       { name: 'Docker', icon: SiDocker, level: 75 },
-      { name: 'Figma', icon: SiFigma, level: 80 },
+      { name: 'Canva', icon: SiCanva, level: 85 },
+    ],
+  },
+  {
+    category: 'CS Fundamentals',
+    color: '#f97316',
+    skills: [
+      { name: 'Data Structures', icon: Layers, level: 85 },
+      { name: 'Algorithms', icon: Binary, level: 80 },
+      { name: 'OOPs', icon: Box, level: 90 },
+      { name: 'Operating System', icon: Cpu, level: 85 },
+      { name: 'Computer Networking', icon: Network, level: 80 },
     ],
   },
 ];

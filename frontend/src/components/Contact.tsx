@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Send, Github, Linkedin, MapPin, CheckCircle, AlertCircle, ExternalLink } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle, AlertCircle, Github, Linkedin, ExternalLink } from 'lucide-react';
+import ShinyButton from './ShinyButton';
 
 const socialLinks = [
   { icon: Github, label: 'GitHub', href: 'https://github.com/Dark-Vinaal', color: 'hover:text-white' },
@@ -171,23 +172,21 @@ export default function Contact() {
                 />
               </div>
 
-              <button
+              <ShinyButton
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-red-500 to-purple-500 text-white font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed glow-gradient"
+                className="w-full"
+                icon={status === 'loading' ? undefined : <Send size={18} />}
               >
                 {status === 'loading' ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <span className="flex items-center gap-2">
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     Sending...
-                  </>
+                  </span>
                 ) : (
-                  <>
-                    <Send size={18} />
-                    Send Message
-                  </>
+                  'Send Message'
                 )}
-              </button>
+              </ShinyButton>
 
               {/* Status messages */}
               {status === 'success' && (

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { Github, Linkedin, Heart, ArrowUp, ExternalLink, Mail, MapPin, Sparkles } from 'lucide-react';
+import { Mail, Github, Linkedin, ExternalLink, Heart, Sparkles, ArrowUp, MapPin } from 'lucide-react';
+import ShinyButton from './ShinyButton';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const socialLinks = [
@@ -157,18 +158,19 @@ export default function Footer() {
               <p className="text-zinc-400 text-sm mb-4 leading-relaxed">
                 Have a project in mind or just want to chat? Feel free to reach out!
               </p>
-              <a
+              <ShinyButton
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-red-500 to-purple-500 text-white font-medium hover:opacity-90 transition-all hover:scale-105 glow-gradient"
+                icon={
+                  <motion.span
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
+                  >
+                    👋
+                  </motion.span>
+                }
               >
                 Say Hello
-                <motion.span
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                >
-                  👋
-                </motion.span>
-              </a>
+              </ShinyButton>
 
               {/* Fun stats */}
               <div className="mt-6 p-4 rounded-xl bg-zinc-800/30 border border-zinc-700/50">
