@@ -83,6 +83,13 @@ export default function Navbar() {
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
+          transition: all 0.3s ease;
+          background-size: 200% auto;
+        }
+
+        .logo-gradient:hover {
+          background-position: right center;
+          background-image: linear-gradient(to right, #a855f7 0%, #ec4899 50%, #a855f7 100%);
         }
         
         .navbar-bg {
@@ -107,7 +114,7 @@ export default function Navbar() {
         <div className="container mx-auto px-6 flex justify-between items-center">
           {/* Logo */}
           <a href="#home" className="logo-gradient">
-            Vinaal
+            Vinaal R
           </a>
 
           {/* Desktop Navigation */}

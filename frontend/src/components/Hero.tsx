@@ -250,7 +250,12 @@ export default function Hero() {
                 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-tight"
               >
                 Hi, I'm{' '}
-                <span className="text-gradient">Vinaal R</span>
+                <span
+                  className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-gradient-x hover:from-purple-500 hover:via-pink-500 hover:to-purple-600 transition-all duration-500 cursor-default bg-[length:200%_auto]"
+                  style={{ willChange: 'background-position' }}
+                >
+                  Vinaal R
+                </span>
               </motion.h1>
 
               <motion.p

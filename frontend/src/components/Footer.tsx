@@ -18,6 +18,16 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 
+const VerticalDivider = () => (
+  <div className="absolute top-0 bottom-0 -right-6 w-px bg-zinc-800 hidden md:block overflow-hidden">
+    <motion.div
+      className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-transparent via-purple-500 to-transparent"
+      animate={{ y: ['-100%', '200%'] }}
+      transition={{ repeat: Infinity, duration: 3, ease: 'linear' }}
+    />
+  </div>
+);
+
 export default function Footer() {
   const [isFooterVisible, setIsFooterVisible] = useState(false);
   const footerRef = useRef<HTMLElement>(null);
@@ -62,11 +72,12 @@ export default function Footer() {
 
             {/* Brand Section - Takes more space */}
             <motion.div
-              className="md:col-span-5"
+              className="md:col-span-5 relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
+              <VerticalDivider />
               <a href="#home" className="inline-block group">
                 <span className="text-4xl font-bold tracking-tighter">
                   <span className="bg-gradient-to-r from-red-500 via-purple-500 to-purple-600 bg-clip-text text-transparent group-hover:from-purple-500 group-hover:via-red-500 group-hover:to-red-600 transition-all duration-500">
@@ -112,12 +123,13 @@ export default function Footer() {
 
             {/* Quick Links */}
             <motion.div
-              className="md:col-span-3"
+              className="md:col-span-3 relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
+              <VerticalDivider />
               <h3 className="text-white font-semibold mb-6 flex items-center gap-2">
                 <Sparkles size={16} className="text-purple-500" />
                 Quick Links
