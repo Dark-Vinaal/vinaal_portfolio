@@ -4,10 +4,11 @@ import { gsap } from 'gsap';
 
 export interface BentoCardData {
     color?: string;
-    title?: string;
+    title?: string | ReactNode;
     description?: string | ReactNode;
     label?: string;
     icon?: ReactNode;
+    headerRight?: ReactNode;
 }
 
 export interface BentoProps {
@@ -649,9 +650,12 @@ const MagicBento: React.FC<BentoProps> = ({
                                     clickEffect={clickEffect}
                                     enableMagnetism={enableMagnetism}
                                 >
-                                    <div className="card__header flex items-center gap-3 relative text-white mb-3">
-                                        {card.icon && <span className="text-purple-400">{card.icon}</span>}
-                                        <span className="card__label text-xs uppercase tracking-wider text-purple-400">{card.label}</span>
+                                    <div className="card__header flex items-center justify-between relative text-white mb-3 w-full">
+                                        <div className="flex items-center gap-3">
+                                            {card.icon && <span className="text-purple-400">{card.icon}</span>}
+                                            <span className="card__label text-xs uppercase tracking-wider text-purple-400">{card.label}</span>
+                                        </div>
+                                        {card.headerRight && <div className="relative z-20 pointer-events-auto">{card.headerRight}</div>}
                                     </div>
                                     <div className="card__content flex flex-col relative text-white flex-1">
                                         <h3 className={`card__title font-semibold text-lg m-0 mb-2 ${textAutoHide ? 'line-clamp-1' : ''}`}>
@@ -667,9 +671,12 @@ const MagicBento: React.FC<BentoProps> = ({
 
                         return (
                             <div key={index} className={baseClassName} style={cardStyle}>
-                                <div className="card__header flex items-center gap-3 relative text-white mb-3">
-                                    {card.icon && <span className="text-purple-400">{card.icon}</span>}
-                                    <span className="card__label text-xs uppercase tracking-wider text-purple-400">{card.label}</span>
+                                <div className="card__header flex items-center justify-between relative text-white mb-3 w-full">
+                                    <div className="flex items-center gap-3">
+                                        {card.icon && <span className="text-purple-400">{card.icon}</span>}
+                                        <span className="card__label text-xs uppercase tracking-wider text-purple-400">{card.label}</span>
+                                    </div>
+                                    {card.headerRight && <div className="relative z-20 pointer-events-auto">{card.headerRight}</div>}
                                 </div>
                                 <div className="card__content flex flex-col relative text-white flex-1">
                                     <h3 className={`card__title font-semibold text-lg m-0 mb-2 ${textAutoHide ? 'line-clamp-1' : ''}`}>

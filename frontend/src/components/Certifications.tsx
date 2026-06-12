@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
 import ChromaGrid from './ChromaGrid';
+import Magnet from './Magnet';
 
 // Import images
 import imgInternship from '../assets/certificates/Vinaal_R_ python internship.png';
@@ -8,22 +10,6 @@ import imgPythonCourse from '../assets/certificates/certificate_Vinaal_R_25BFT44
 import imgSimplilearnFrontEnd from '../assets/certificates/Simplilearn Certificate_pages-to-jpg-0001.jpg';
 import imgAIWorkshop from '../assets/certificates/AI-Workshop Certificate.jpg';
 import imgGuvi from '../assets/certificates/GuviCertification - o5H1949WA2T9d271Q3.png';
-import imgBrototypeWeb from '../assets/certificates/Recognition_page-0001.jpg';
-import imgBrototypeCoding from '../assets/certificates/Coding Standards C & Java Certification_page-0001.jpg';
-import imgIBMAI from '../assets/certificates/IBM AI Workshop.jpg';
-import imgIBMEnterprise from '../assets/certificates/IBM-Certified.png';
-import imgIBMProblem from '../assets/certificates/IBM Problem Solving & Controls.jpg';
-import imgIBMCareer from '../assets/certificates/IBM Career Management Essential_page-0001.jpg';
-import imgIBMComm from '../assets/certificates/IBM Communication & Personality Dynamics.jpg';
-import imgGoogleFrontend from '../assets/certificates/Front-end for Beginners_certificate (1).jpg';
-import imgGoogleAngular from '../assets/certificates/Angular_certificate.jpg';
-import imgSimplilearnTech from '../assets/certificates/Tech for Everyone_certificate.jpg';
-import imgSoloWebDev from '../assets/certificates/Web Development_certificate.jpg';
-import imgSimplilearnJSInter from '../assets/certificates/JavaScript Intermediate_certificate.jpg';
-import imgSimplilearnJS from '../assets/certificates/Introduction to JavaScript_certificate.jpg';
-import imgSimplilearnCSS from '../assets/certificates/Introduction to CSS_certificate.jpg';
-import imgSimplilearnHTML from '../assets/certificates/Introduction to HTML_certificate.jpg';
-import imgGrooming from '../assets/certificates/Grooming-Certificate.png';
 
 export default function Certifications() {
     const certifications = [
@@ -80,150 +66,6 @@ export default function Certifications() {
             borderColor: "#10B981",
             gradient: "linear-gradient(150deg, #10B981, #000)",
             url: "#"
-        },
-        {
-            image: imgBrototypeWeb,
-            title: "Brototype",
-            subtitle: "Web Designing",
-            handle: "Certification",
-            borderColor: "#EF4444",
-            gradient: "linear-gradient(155deg, #EF4444, #000)",
-            url: "#"
-        },
-        {
-            image: imgBrototypeCoding,
-            title: "Brototype",
-            subtitle: "Coding Standards C++ & Java",
-            handle: "Certification",
-            borderColor: "#EF4444",
-            gradient: "linear-gradient(145deg, #EF4444, #000)",
-            url: "#"
-        },
-        {
-            image: imgIBMAI,
-            title: "IBM",
-            subtitle: "AI Workshop",
-            handle: "Workshop",
-            borderColor: "#0F62FE",
-            gradient: "linear-gradient(135deg, #0F62FE, #000)",
-            url: "#"
-        },
-        {
-            image: imgIBMEnterprise,
-            title: "IBM",
-            subtitle: "Enterprise Grade AI",
-            handle: "Certification",
-            borderColor: "#0F62FE",
-            gradient: "linear-gradient(145deg, #0F62FE, #000)",
-            url: "#"
-        },
-        {
-            image: imgIBMProblem,
-            title: "IBM",
-            subtitle: "Problem Solving & Controls",
-            handle: "Soft Skills",
-            borderColor: "#0F62FE",
-            gradient: "linear-gradient(155deg, #0F62FE, #000)",
-            url: "#"
-        },
-        {
-            image: imgIBMCareer,
-            title: "IBM",
-            subtitle: "Career Management Essential",
-            handle: "Soft Skills",
-            borderColor: "#0F62FE",
-            gradient: "linear-gradient(165deg, #0F62FE, #000)",
-            url: "#"
-        },
-        {
-            image: imgIBMComm,
-            title: "IBM",
-            subtitle: "Communication & Personality Dynamics",
-            handle: "Soft Skills",
-            borderColor: "#0F62FE",
-            gradient: "linear-gradient(175deg, #0F62FE, #000)",
-            url: "#"
-        },
-        {
-            image: imgGoogleFrontend,
-            title: "Google",
-            subtitle: "Front-end",
-            handle: "Certification",
-            borderColor: "#4285F4",
-            gradient: "linear-gradient(135deg, #4285F4, #000)",
-            url: "#"
-        },
-        {
-            image: imgGoogleAngular,
-            title: "Google",
-            subtitle: "Angular",
-            handle: "Certification",
-            borderColor: "#DD0031",
-            gradient: "linear-gradient(145deg, #DD0031, #000)",
-            url: "#"
-        },
-        {
-            image: imgSoloWebDev,
-            title: "SoloLearn",
-            subtitle: "Web Development",
-            handle: "Certification",
-            borderColor: "#2563EB",
-            gradient: "linear-gradient(135deg, #2563EB, #000)",
-            url: "#"
-        },
-        {
-            image: imgSimplilearnTech,
-            title: "SoloLearn",
-            subtitle: "Tech for Everyone",
-            handle: "Certification",
-            borderColor: "#22D3EE",
-            gradient: "linear-gradient(135deg, #22D3EE, #000)",
-            url: "#"
-        },
-        {
-            image: imgSimplilearnJSInter,
-            title: "SoloLearn",
-            subtitle: "JavaScript Intermediate",
-            handle: "Certification",
-            borderColor: "#F7DF1E",
-            gradient: "linear-gradient(145deg, #F7DF1E, #000)",
-            url: "#"
-        },
-        {
-            image: imgSimplilearnJS,
-            title: "SoloLearn",
-            subtitle: "JavaScript",
-            handle: "Certification",
-            borderColor: "#F7DF1E",
-            gradient: "linear-gradient(155deg, #F7DF1E, #000)",
-            url: "#"
-        },
-        {
-            image: imgSimplilearnCSS,
-            title: "SoloLearn",
-            subtitle: "CSS",
-            handle: "Certification",
-            borderColor: "#264DE4",
-            gradient: "linear-gradient(135deg, #264DE4, #000)",
-            url: "#"
-        },
-        {
-            image: imgSimplilearnHTML,
-            title: "SoloLearn",
-            subtitle: "HTML",
-            handle: "Certification",
-            borderColor: "#E34F26",
-            gradient: "linear-gradient(135deg, #E34F26, #000)",
-            url: "#"
-        },
-        {
-            image: imgGrooming,
-            title: "Grooming Certificate",
-            subtitle: "Gillette Guard",
-            handle: "Soft Skills",
-            borderColor: "#EF4444",
-            gradient: "linear-gradient(165deg, #EF4444, #000)",
-            url: "#"
         }
     ];
 
@@ -257,6 +99,79 @@ export default function Certifications() {
                         ease="power3.out"
                     />
                 </div>
+
+                {/* View more certifications button */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="text-center mt-12"
+                >
+                    <style>{`
+                        .view-all-btn {
+                            position: relative;
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 10px;
+                            padding: 16px 32px;
+                            border-radius: 50px;
+                            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 50%, #6a11cb 100%);
+                            background-size: 200% 200%;
+                            color: white;
+                            font-weight: 600;
+                            font-size: 16px;
+                            text-decoration: none;
+                            box-shadow: 0 4px 20px rgba(106, 17, 203, 0.4), 0 0 40px rgba(37, 117, 252, 0.2);
+                            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            overflow: hidden;
+                        }
+                        
+                        .view-all-btn::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: -100%;
+                            width: 100%;
+                            height: 100%;
+                            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+                            transition: left 0.5s ease;
+                        }
+                        
+                        .view-all-btn:hover {
+                            transform: scale(1.05);
+                            box-shadow: 0 8px 40px rgba(106, 17, 203, 0.6), 0 0 60px rgba(37, 117, 252, 0.4);
+                            background-position: 100% 0;
+                        }
+                        
+                        .view-all-btn:hover::before {
+                            left: 100%;
+                        }
+                        
+                        .view-all-btn:active {
+                            transform: scale(0.98);
+                        }
+                        
+                        .view-all-btn .icon {
+                            transition: transform 0.3s ease;
+                        }
+                        
+                        .view-all-btn:hover .icon {
+                            transform: translateX(4px);
+                        }
+                    `}</style>
+                    <Magnet padding={50} disabled={false} magnetStrength={50}>
+                        <a
+                            href="https://github.com/Dark-Vinaal/Dark-Vinaal/blob/main/Certifications/Certificate.md"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="view-all-btn"
+                        >
+                            View All Certifications
+                            <ExternalLink size={18} className="icon" />
+                        </a>
+                    </Magnet>
+                </motion.div>
             </div>
         </section>
     );

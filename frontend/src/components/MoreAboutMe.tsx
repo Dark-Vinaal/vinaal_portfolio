@@ -1,21 +1,82 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, School, Award, Languages, Users, Heart } from 'lucide-react';
 import MagicBento from './MagicBento';
 import type { BentoCardData } from './MagicBento';
 
 export default function MoreAboutMe() {
+    const [educationLevel, setEducationLevel] = useState<'PG' | 'UG'>('PG');
+
+    const toggleElement = (
+        <div className="flex items-center bg-purple-950/40 p-0.5 rounded-full border border-purple-500/30 text-[10px] sm:text-xs relative z-20 pointer-events-auto">
+            <button
+                type="button"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    setEducationLevel('PG');
+                }}
+                className={`px-2 py-0.5 rounded-full transition-all duration-300 font-medium cursor-pointer ${
+                    educationLevel === 'PG'
+                        ? 'bg-purple-600 text-white shadow-sm'
+                        : 'text-zinc-400 hover:text-zinc-200'
+                }`}
+            >
+                PG
+            </button>
+            <button
+                type="button"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    setEducationLevel('UG');
+                }}
+                className={`px-2 py-0.5 rounded-full transition-all duration-300 font-medium cursor-pointer ${
+                    educationLevel === 'UG'
+                        ? 'bg-purple-600 text-white shadow-sm'
+                        : 'text-zinc-400 hover:text-zinc-200'
+                }`}
+            >
+                UG
+            </button>
+        </div>
+    );
+
     const cards: BentoCardData[] = [
         {
             color: '#060010',
-            title: 'National College (Autonomous), Tiruchirapalli',
+            title: (
+                <motion.span
+                    key={educationLevel}
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="block"
+                >
+                    {educationLevel === 'PG'
+                        ? 'Bishop Heber College (Autonomous), Tiruchirapalli'
+                        : 'National College (Autonomous), Tiruchirapalli'}
+                </motion.span>
+            ),
             description: (
-                <div className="space-y-2">
-                    <p className="text-purple-400 font-medium">Undergraduation</p>
-                    <p>Bachelor of Science - Computer Science</p>
-                </div>
+                <motion.div
+                    key={educationLevel}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="space-y-2"
+                >
+                    <p className="text-purple-400 font-medium">
+                        {educationLevel === 'PG' ? 'Post Graduation' : 'Undergraduation'}
+                    </p>
+                    <p>
+                        {educationLevel === 'PG'
+                            ? 'Master of Science - Computer Science'
+                            : 'Bachelor of Science - Computer Science'}
+                    </p>
+                </motion.div>
             ),
             label: 'College Education',
-            icon: <GraduationCap size={20} />
+            icon: <GraduationCap size={20} />,
+            headerRight: toggleElement
         },
         {
             color: '#060010',

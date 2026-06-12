@@ -96,6 +96,20 @@ function FloatingShape({
 export default function LetsConnect() {
     return (
         <section className="relative overflow-hidden" style={{ padding: '100px 0' }}>
+            {/* Curved separator design */}
+            <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-10 pointer-events-none">
+                <svg
+                    viewBox="0 0 1200 120"
+                    preserveAspectRatio="none"
+                    className="relative block w-full h-[40px] md:h-[60px] lg:h-[80px]"
+                >
+                    <path
+                        d="M0,80 C150,110 350,30 600,70 C850,110 1050,50 1200,80 L1200,0 L0,0 Z"
+                        fill="#000000"
+                    />
+                </svg>
+            </div>
+
             {/* Background gradient */}
             <div
                 className="absolute inset-0"

@@ -14,6 +14,27 @@ export default function About() {
 
     return (
         <section id="about" className="py-24 bg-zinc-950 relative overflow-hidden">
+            {/* Wavy separator design - Hero to About */}
+            <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-10 pointer-events-none">
+                <svg
+                    viewBox="0 0 1200 120"
+                    preserveAspectRatio="none"
+                    className="relative block w-full h-[40px] md:h-[60px] lg:h-[80px]"
+                >
+                    {/* Deep purple background wave */}
+                    <path
+                        d="M0,80 C150,120 350,20 600,60 C850,100 1050,40 1200,80 L1200,0 L0,0 Z"
+                        fill="#a855f7"
+                        opacity="0.3"
+                    />
+                    {/* Foreground black wave */}
+                    <path
+                        d="M0,80 C150,110 350,30 600,70 C850,110 1050,50 1200,80 L1200,0 L0,0 Z"
+                        fill="#000000"
+                    />
+                </svg>
+            </div>
+
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
