@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, CheckCircle, AlertCircle, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle, AlertCircle, Github, Linkedin, ExternalLink, Clock } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import ShinyButton from './ShinyButton';
 
 const socialLinks = [
@@ -15,24 +16,75 @@ const contactInfo = [
   { icon: MapPin, label: 'Location', value: 'Tiruchirappalli, Tamil Nadu, India' },
 ];
 
+const COOLDOWN_KEY = 'portfolio_last_email_sent';
+const COOLDOWN_MS = 24 * 60 * 60 * 1000; // 24 hours
+
+/** Check if the cooldown period is still active */
+function isCooldownActive(): boolean {
+  try {
+    const lastSent = localStorage.getItem(COOLDOWN_KEY);
+    if (!lastSent) return false;
+    const elapsed = Date.now() - parseInt(lastSent, 10);
+    return elapsed < COOLDOWN_MS;
+  } catch {
+    return false;
+  }
+}
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'cooldown'>('idle');
   const [statusMessage, setStatusMessage] = useState('');
+
+  // Check cooldown on mount and after successful sends
+  useEffect(() => {
+    if (isCooldownActive()) {
+      setStatus('cooldown');
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Prevent spam: block if already sending or in cooldown
+    if (status === 'loading') return;
+    if (isCooldownActive()) {
+      setStatus('cooldown');
+      return;
+    }
+
     setStatus('loading');
 
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      // Save cooldown timestamp
+      try {
+        localStorage.setItem(COOLDOWN_KEY, Date.now().toString());
+      } catch {
+        // localStorage unavailable — continue gracefully
+      }
+
       setStatus('success');
-      setStatusMessage('Message sent successfully! I\'ll get back to you soon.');
+      setStatusMessage("Message sent successfully! I'll get back to you soon.");
       setForm({ name: '', email: '', subject: '', message: '' });
 
-      // Reset status after 5 seconds
+      // Transition to cooldown state after showing success
+      setTimeout(() => setStatus('cooldown'), 5000);
+    } catch {
+      setStatus('error');
+      setStatusMessage('Something went wrong. Please try again or reach out via email.');
       setTimeout(() => setStatus('idle'), 5000);
-    }, 1500);
+    }
   };
 
   return (
@@ -122,7 +174,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" aria-disabled={status === 'cooldown'}>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-zinc-400 mb-2">Name</label>
@@ -130,7 +182,8 @@ export default function Contact() {
                     type="text"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-zinc-900/50 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-purple-500 focus:glow-purple transition-all"
+                    disabled={status === 'cooldown' || status === 'loading'}
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-900/50 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-purple-500 focus:glow-purple transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="Your name"
                     required
                   />
@@ -141,7 +194,8 @@ export default function Contact() {
                     type="email"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-zinc-900/50 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-purple-500 focus:glow-purple transition-all"
+                    disabled={status === 'cooldown' || status === 'loading'}
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-900/50 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-purple-500 focus:glow-purple transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="your@email.com"
                     required
                   />
@@ -154,7 +208,8 @@ export default function Contact() {
                   type="text"
                   value={form.subject}
                   onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-zinc-900/50 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-purple-500 focus:glow-purple transition-all"
+                  disabled={status === 'cooldown' || status === 'loading'}
+                  className="w-full px-4 py-3 rounded-xl bg-zinc-900/50 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-purple-500 focus:glow-purple transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="What's this about?"
                   required
                 />
@@ -165,8 +220,9 @@ export default function Contact() {
                 <textarea
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  disabled={status === 'cooldown' || status === 'loading'}
                   rows={5}
-                  className="w-full px-4 py-3 rounded-xl bg-zinc-900/50 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-purple-500 focus:glow-purple transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-zinc-900/50 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-purple-500 focus:glow-purple transition-all resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Tell me about your project..."
                   required
                 />
@@ -174,14 +230,19 @@ export default function Contact() {
 
               <ShinyButton
                 type="submit"
-                disabled={status === 'loading'}
+                disabled={status === 'loading' || status === 'cooldown'}
                 className="w-full"
-                icon={status === 'loading' ? undefined : <Send size={18} />}
+                icon={status === 'loading' || status === 'cooldown' ? undefined : <Send size={18} />}
               >
                 {status === 'loading' ? (
                   <span className="flex items-center gap-2">
                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     Sending...
+                  </span>
+                ) : status === 'cooldown' ? (
+                  <span className="flex items-center gap-2">
+                    <Clock size={18} />
+                    Transmission Locked
                   </span>
                 ) : (
                   'Send Message'
@@ -208,6 +269,30 @@ export default function Contact() {
                 >
                   <AlertCircle size={18} />
                   {statusMessage}
+                </motion.div>
+              )}
+
+              {/* Cooldown message — cyberpunk themed */}
+              {status === 'cooldown' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="relative overflow-hidden rounded-xl border border-purple-500/30 bg-purple-500/5 backdrop-blur-sm px-5 py-4"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-red-500/10 pointer-events-none" />
+                  <div className="relative flex items-start gap-3">
+                    <div className="mt-0.5 p-2 rounded-lg bg-purple-500/20 text-purple-400 shrink-0">
+                      <Clock size={18} />
+                    </div>
+                    <div>
+                      <p className="text-purple-300 font-semibold tracking-wide">
+                        Signal received ⚡
+                      </p>
+                      <p className="text-zinc-400 text-sm mt-1">
+                        Your next transmission window opens in 24 hours.
+                      </p>
+                    </div>
+                  </div>
                 </motion.div>
               )}
             </form>
