@@ -209,7 +209,7 @@ export default function Hero() {
       id="home"
       className="min-h-screen w-full relative bg-black overflow-hidden"
     >
-      {/* LaserFlow Background - UNCHANGED */}
+      {/* LaserFlow Background */}
       <div className="absolute inset-0 z-0">
         <LaserFlow
           horizontalBeamOffset={0.0}
@@ -222,7 +222,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* Gradient overlays for depth - UNCHANGED */}
+      {/* Gradient overlays for depth */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 pointer-events-none z-[1]" />
 
       {/* Main Content Container */}
