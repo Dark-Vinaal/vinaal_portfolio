@@ -68,7 +68,7 @@ export default function About() {
                                 blurStrength={10}
                                 textClassName="text-zinc-300"
                             >
-                                🧑‍🎓 I am a Computer Science undergraduate with a strong foundation in programming and problem-solving. I enjoy building responsive and user-friendly websites and applications, with a particular interest in Full Stack Web Development. I take pride in writing clean, maintainable code and creating smooth user experiences.
+                                ◆ I am a Computer Science Postgraduate with a strong foundation in PROGRAMMING, SOFTWARE DEVELOPMENT, and PROBLEM-SOLVING. I specialize in building MODERN, RESPONSIVE, and USER-CENTRIC web applications while continuously improving my skills in FULL STACK DEVELOPMENT and scalable digital solutions.
                             </ScrollReveal>
                             <ScrollReveal
                                 baseOpacity={0}
@@ -77,7 +77,7 @@ export default function About() {
                                 blurStrength={10}
                                 textClassName="text-zinc-300"
                             >
-                                🚀 I am constantly exploring new tools, frameworks, and best practices to expand my skills and stay up to date with evolving technologies. My goal is to contribute to impactful projects and grow into a well-rounded Web Developer & Software Developer.
+                                ◆ I am a passionate developer with a strong interest in evolving technologies such as SOFTWARE DEVELOPMENT, ARTIFICIAL INTELLIGENCE, and other EMERGING TECH fields. I constantly explore new tools, frameworks, and industry best practices to expand my technical expertise and stay up to date with the rapidly evolving technology landscape.
                             </ScrollReveal>
                             <ScrollReveal
                                 baseOpacity={0}
@@ -86,7 +86,7 @@ export default function About() {
                                 blurStrength={10}
                                 textClassName="text-zinc-300"
                             >
-                                🚀 I am always eager to learn new technologies and tools, including experimenting with AI-driven solutions. Beyond academics, my passion for gaming has played a key role in sparking my interest in technology, laptops, and eventually coding, which continues to inspire my journey in software development.
+                                ◆ My journey into this field began through my interest in GAMING, EDITING, TECHNOLOGY, and DIGITAL CREATIVITY, which gradually developed into curiosity about laptops, software, and how modern digital systems work. That curiosity eventually led me to coding, and since then, I have continued building my knowledge and passion for creating impactful, innovative, and future-ready software solutions.
                             </ScrollReveal>
                         </div>
 
