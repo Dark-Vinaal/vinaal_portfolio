@@ -25,7 +25,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     baseOpacity = 0.1,
     baseRotation = 3,
     blurStrength = 4,
-    containerClassName = '',
+    containerClassName = 'my-5',
     textClassName = '',
     rotationEnd = 'bottom bottom',
     wordAnimationEnd = 'bottom bottom'
@@ -110,7 +110,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     }, [scrollContainerRef, enableBlur, baseRotation, baseOpacity, rotationEnd, wordAnimationEnd, blurStrength]);
 
     return (
-        <h2 ref={containerRef} className={`my-5 ${containerClassName}`}>
+        <h2 ref={containerRef} className={containerClassName}>
             <p className={`text-base leading-relaxed ${textClassName}`}>{splitText}</p>
         </h2>
     );

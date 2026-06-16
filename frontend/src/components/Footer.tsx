@@ -213,14 +213,16 @@ export default function Footer() {
           </div>
 
           {/* Bottom Section */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="relative flex items-center h-12">
+            {/* Built with line left */}
             <motion.p
-              className="text-zinc-500 text-sm flex items-center gap-2"
+              className="text-zinc-600 text-sm flex items-center gap-2"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
+              transition={{ delay: 0.05 }}
             >
-              Crafted with
+              Built with
               <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ repeat: Infinity, duration: 1 }}
@@ -229,9 +231,9 @@ export default function Footer() {
               </motion.span>
               by <span className="text-white font-medium">Vinaal R</span>
             </motion.p>
-
+            {/* Centered copyright */}
             <motion.p
-              className="text-zinc-600 text-sm"
+              className="text-zinc-600 text-sm absolute left-1/2 transform -translate-x-1/2"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -248,7 +250,7 @@ export default function Footer() {
         {isFooterVisible && (
           <motion.button
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 group"
+            className="fixed bottom-8 right-24 z-50 group"
             initial={{ opacity: 0, scale: 0, rotate: -180 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             exit={{ opacity: 0, scale: 0, rotate: 180 }}

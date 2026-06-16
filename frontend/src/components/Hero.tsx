@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin, Clock, Calendar, Sun, ExternalLink, ArrowRight } from 'lucide-react';
 import LaserFlow from './LaserFlow';
-import StarBorder from './StarBorder';
+import BorderGlow from './BorderGlow';
 import ShinyButton from './ShinyButton';
 
 // Hidden reveal element with smooth, cool purplish effects
@@ -306,14 +306,20 @@ export default function Hero() {
                 >
                   View My Work
                 </ShinyButton>
-                <StarBorder
-                  as="a"
-                  href="#contact"
-                  color="cyan"
-                  speed="5s"
+                <BorderGlow
+                  borderRadius={9999}
+                  colors={['#a855f7', '#1e1b4b', '#f472b6']}
+                  className="inline-block"
+                  animated={true}
+                  alwaysShow={true}
                 >
-                  Get in Touch
-                </StarBorder>
+                  <a
+                    href="#contact"
+                    className="flex items-center justify-center px-8 py-4 bg-zinc-950 rounded-full text-white font-semibold tracking-wide hover:bg-zinc-900 transition-colors"
+                  >
+                    Get in Touch
+                  </a>
+                </BorderGlow>
               </motion.div>
             </div>
 
