@@ -4,6 +4,7 @@ import ScrollReveal from './ScrollReveal';
 import PixelCard from './PixelCard';
 import BorderGlow from './BorderGlow';
 import ShinyButton from './ShinyButton';
+import ShinyText from './ShinyText';
 
 export default function About() {
     const highlights = [
@@ -107,6 +108,63 @@ export default function About() {
                                 ◆ My journey into this field began through my interest in GAMING, EDITING, TECHNOLOGY, and DIGITAL CREATIVITY, which gradually developed into curiosity about laptops, software, and how modern digital systems work. That curiosity eventually led me to coding, and since then, I have continued building my knowledge and passion for creating impactful, innovative, and future-ready software solutions.
                             </ScrollReveal>
                         </div>
+                        {/* Stats */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.6 }}
+                            className="flex justify-between mt-8"
+                        >
+                            <div className="flex flex-col items-center">
+                                <ShinyText
+                                    text="5+"
+                                    color="#1e1b4b"
+                                    shineColor="#a855f7"
+                                    speed={2}
+                                    className="text-4xl md:text-5xl font-bold"
+                                />
+                                <ShinyText
+                                    text="Students Trained"
+                                    color="#a855f7"
+                                    shineColor="#e9d5ff"
+                                    speed={3}
+                                    className="text-xs mt-1 tracking-wide"
+                                />
+                            </div>
+                            <div className="flex flex-col items-center">
+                                <ShinyText
+                                    text="25+"
+                                    color="#1e1b4b"
+                                    shineColor="#a855f7"
+                                    speed={2}
+                                    className="text-4xl md:text-5xl font-bold"
+                                />
+                                <ShinyText
+                                    text="Projects Completed"
+                                    color="#a855f7"
+                                    shineColor="#e9d5ff"
+                                    speed={3}
+                                    className="text-xs mt-1 tracking-wide"
+                                />
+                            </div>
+                            <div className="flex flex-col items-center">
+                                <ShinyText
+                                    text="1"
+                                    color="#1e1b4b"
+                                    shineColor="#a855f7"
+                                    speed={2}
+                                    className="text-4xl md:text-5xl font-bold"
+                                />
+                                <ShinyText
+                                    text="Internship"
+                                    color="#a855f7"
+                                    shineColor="#e9d5ff"
+                                    speed={3}
+                                    className="text-xs mt-1 tracking-wide"
+                                />
+                            </div>
+                        </motion.div>
                     </motion.div>
 
                     {/* Right: Highlights Grid & Buttons */}

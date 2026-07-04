@@ -1,19 +1,76 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Smartphone, Layout, Calculator, Gamepad2, FileText, Activity, Sigma, Repeat, Coffee, Palette, Scissors } from 'lucide-react';
+import { ExternalLink, Github, Smartphone, Layout, Calculator, Gamepad2, FileText, Activity, Sigma, Repeat, Coffee, Palette, Scissors, Bot, Joystick, ShieldHalf, Code2, Binary, Package } from 'lucide-react';
 import Magnet from './Magnet';
 import imgRockPaperScissors from '../assets/projects/rockpaperscissors.jpg';
 
 const projects = [
+  // Row 1
   {
-    id: 1,
-    title: 'Techy Zone',
-    description: 'A comprehensive tech resource hub featuring curated links to AI tools, development resources, design assets, cloud storage, cybersecurity tools, and more.',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
-    tech: ['HTML', 'CSS', 'JavaScript', 'Netlify'],
-    icon: Layout,
-    github: 'https://github.com/Dark-Vinaal?tab=repositories',
-    live: 'https://techyzone.netlify.app/',
-    color: 'from-purple-500 to-blue-500',
+    id: 101,
+    title: 'Dark AI',
+    description: 'An AI-powered generative assistant currently under active development. Leveraging cutting-edge language models for intelligent conversations and content generation.',
+    image: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=400&fit=crop',
+    tech: ['React', 'TypeScript', 'API', 'Node.js'],
+    icon: Bot,
+    github: 'https://github.com/Dark-Vinaal/DARK_GEN-AI.git',
+    color: 'from-violet-600 to-purple-500',
+    disabled: true,
+  },
+  {
+    id: 102,
+    title: 'GamesHub',
+    description: 'A curated gaming hub bringing together multiple browser-based games in one sleek platform with smooth navigation and engaging UI.',
+    image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=400&fit=crop',
+    tech: ['React', 'TypeScript', 'Tailwind'],
+    icon: Joystick,
+    github: 'https://github.com/Dark-Vinaal/GamesHub.git',
+    color: 'from-fuchsia-500 to-pink-500',
+    disabled: true,
+  },
+  {
+    id: 103,
+    title: 'Project Batman',
+    description: 'A themed interactive web experience inspired by the Dark Knight universe, featuring immersive design and dynamic animations.',
+    image: 'https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=600&h=400&fit=crop',
+    tech: ['React', 'TypeScript', 'Tailwind'],
+    icon: ShieldHalf,
+    github: 'https://github.com/Dark-Vinaal/I-m-Batman.git',
+    live: 'https://theproject-batman.vercel.app/',
+    color: 'from-slate-700 to-zinc-900',
+  },
+  {
+    id: 4,
+    title: 'Asphalt Velocity',
+    description: 'A high-octane racing game experience built for web browsers. Features dynamic controls and engaging gameplay mechanics.',
+    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&h=400&fit=crop',
+    tech: ['React', 'JavaScript', 'Tailwind', ],
+    icon: Gamepad2,
+    github: 'https://github.com/Dark-Vinaal/Asphalt_Velocity',
+    live: 'https://dark-vinaal.github.io/Asphalt_Velocity/',
+    color: 'from-emerald-500 to-cyan-500',
+  },
+  // Row 2
+  {
+    id: 104,
+    title: 'DevHub',
+    description: 'A developer-centric resource hub aggregating tools, documentation links, and utilities for modern web development workflows.',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop',
+    tech: ['React', 'TypeScript', 'Tailwind'],
+    icon: Code2,
+    github: 'https://github.com/Dark-Vinaal/DevHub.git',
+    live: 'https://devhub-tz.vercel.app/',
+    color: 'from-sky-500 to-blue-600',
+  },
+  {
+    id: 105,
+    title: 'AlgoVerse',
+    description: 'An interactive algorithm visualizer that brings data structures and sorting algorithms to life with step-by-step animations.',
+    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    icon: Binary,
+    github: 'https://github.com/Dark-Vinaal/AlgoVerse.git',
+    live: 'https://dark-vinaal.github.io/AlgoVerse/',
+    color: 'from-amber-500 to-orange-600',
   },
   {
     id: 2,
@@ -27,15 +84,28 @@ const projects = [
     color: 'from-red-500 to-orange-500',
   },
   {
-    id: 4,
-    title: 'Asphalt Velocity',
-    description: 'A high-octane racing game experience built for web browsers. Features dynamic controls and engaging gameplay mechanics.',
-    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&h=400&fit=crop',
+    id: 106,
+    title: 'Dark Fetch',
+    description: 'A Sleek, lightweight system information fetcher written in Python. Features real-time hardware metrics, ASCII progress bars, and vibrant terminal styling using Rich and PSUtil.',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
+    tech: ['Python', 'Rich', 'psutil'],
+    icon: Package,
+    github: 'https://github.com/Dark-Vinaal/Dark_Fetch.git',
+    live: 'https://github.com/Dark-Vinaal/Dark_Fetch#-getting-started',
+    color: 'from-teal-500 to-emerald-600',
+    viewLabel: 'Usage',
+  },
+  // Row 3+
+  {
+    id: 1,
+    title: 'Techy Zone',
+    description: 'A comprehensive tech resource hub featuring curated links to AI tools, development resources, design assets, cloud storage, cybersecurity tools, and more.',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    icon: Gamepad2,
-    github: 'https://github.com/Dark-Vinaal/Asphalt_Velocity',
-    live: 'https://dark-vinaal.github.io/Asphalt_Velocity/',
-    color: 'from-emerald-500 to-cyan-500',
+    icon: Layout,
+    github: 'https://github.com/Dark-Vinaal?tab=repositories',
+    live: 'https://techyzone.netlify.app/',
+    color: 'from-purple-500 to-blue-500',
   },
   {
     id: 3,
@@ -108,7 +178,7 @@ const projects = [
     title: 'Calculator Java',
     description: 'A robust calculator application built with Java, featuring a graphical user interface and advanced operations.',
     image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop',
-    tech: ['Java', 'Swing', 'POO'],
+    tech: ['Java', 'Swing', 'Jframe'],
     icon: Coffee,
     github: 'https://github.com/Dark-Vinaal/Calculator-Java',
     color: 'from-orange-600 to-red-600',
@@ -128,7 +198,7 @@ const projects = [
     title: 'Rock-Paper-Scissors',
     description: 'Classic game implementation featuring game logic, score tracking, and interactive user feedback.',
     image: imgRockPaperScissors,
-    tech: ['HTML', 'CSS', 'JavaScript'],
+    tech: ['Python', 'OS Module'],
     icon: Scissors,
     github: 'https://github.com/Dark-Vinaal/Rock-Paper-Scissor',
     color: 'from-green-500 to-emerald-500',
@@ -158,14 +228,14 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
           {projects.map((project, idx) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
+              transition={{ delay: idx * 0.08 }}
               className="group relative rounded-2xl overflow-hidden glass hover:glow-gradient transition-all duration-500 h-full flex flex-col"
             >
               {/* Image */}
@@ -178,26 +248,26 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent" />
 
                 {/* Icon overlay */}
-                <div className={`absolute top-4 right-4 p-3 rounded-xl bg-gradient-to-r ${project.color} opacity-90`}>
-                  <project.icon size={20} className="text-white" />
+                <div className={`absolute top-4 right-4 p-2.5 rounded-xl bg-gradient-to-r ${project.color} opacity-90`}>
+                  <project.icon size={18} className="text-white" />
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gradient transition-all">
+              <div className="p-5 flex flex-col flex-grow">
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gradient transition-all">
                   {project.title}
                 </h3>
-                <p className="text-zinc-400 text-sm mb-4 line-clamp-3">
+                <p className="text-zinc-400 text-xs mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
                 {/* Tech stack */}
-                <div className="flex flex-wrap gap-2 mb-6 mt-auto">
+                <div className="flex flex-wrap gap-1.5 mb-5 mt-auto">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs font-mono rounded-full bg-zinc-800/50 text-zinc-400 border border-zinc-700/50"
+                      className="px-2.5 py-0.5 text-[10px] font-mono rounded-full bg-zinc-800/50 text-zinc-400 border border-zinc-700/50"
                     >
                       {tech}
                     </span>
@@ -205,17 +275,25 @@ export default function Projects() {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-4 pt-4 border-t border-zinc-800/50">
-                  {project.live && (
+                <div className="flex gap-4 pt-3 border-t border-zinc-800/50">
+                  {project.live && !project.disabled && (
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors"
                     >
-                      <ExternalLink size={16} />
-                      <span>View</span>
+                      <ExternalLink size={14} />
+                      <span>{project.viewLabel || 'View'}</span>
                     </a>
+                  )}
+                  {project.disabled && (
+                    <span
+                      className="flex items-center gap-2 text-sm text-zinc-600 opacity-40 cursor-not-allowed select-none"
+                    >
+                      <ExternalLink size={14} />
+                      <span>View</span>
+                    </span>
                   )}
                   <a
                     href={project.github}
@@ -223,7 +301,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors"
                   >
-                    <Github size={16} />
+                    <Github size={14} />
                     <span>Code</span>
                   </a>
                 </div>
