@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Smartphone, Layout, Calculator, Gamepad2, FileText, Activity, Sigma, Repeat, Coffee, Palette, Scissors, Bot, Joystick, ShieldHalf, Code2, Binary, Package } from 'lucide-react';
+import { ExternalLink, Github, Smartphone, Layout, Calculator, Gamepad2, FileText, Coffee, Palette, Scissors, Bot, Joystick, ShieldHalf, Code2, Binary, Package } from 'lucide-react';
 import Magnet from './Magnet';
 import imgRockPaperScissors from '../assets/projects/rockpaperscissors.jpg';
 
