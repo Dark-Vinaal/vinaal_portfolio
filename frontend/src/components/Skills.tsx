@@ -4,10 +4,11 @@ import {
   SiHtml5, SiCss3, SiPostgresql,
   SiGit, SiDocker,
   SiTailwindcss, SiPython,
-  SiCplusplus, SiC, SiFlask, SiBootstrap, SiMysql, SiGithub, SiCanva
+  SiCplusplus, SiC, SiFlask, SiBootstrap, SiMysql, SiGithub, SiCanva,
+  SiExpress, SiGo, SiMongodb
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
-import { Cpu, Binary, Layers, Box, Network } from 'lucide-react';
+import { Cpu, Binary, Layers, Box, Network, KeyRound } from 'lucide-react';
 import ElectricBorder from './ElectricBorder';
 
 const skillCategories = [
@@ -15,12 +16,12 @@ const skillCategories = [
     category: 'Frontend Development',
     color: '#ef4444',
     skills: [
-      { name: 'React.js', icon: SiReact, level: 60 },
+      { name: 'React.js', icon: SiReact, level: 80 },
       { name: 'HTML5', icon: SiHtml5, level: 95 },
-      { name: 'CSS3', icon: SiCss3, level: 92 },
-      { name: 'JavaScript', icon: SiJavascript, level: 95 },
+      { name: 'CSS3', icon: SiCss3, level: 95 },
+      { name: 'JavaScript', icon: SiJavascript, level: 80 },
       { name: 'TypeScript', icon: SiTypescript, level: 70 },
-      { name: 'Bootstrap', icon: SiBootstrap, level: 85 },
+      { name: 'Bootstrap', icon: SiBootstrap, level: 90 },
       { name: 'Tailwind', icon: SiTailwindcss, level: 90 },
     ],
   },
@@ -29,11 +30,12 @@ const skillCategories = [
     color: '#a855f7',
     skills: [
       { name: 'Python', icon: SiPython, level: 90 },
-      { name: 'Java', icon: FaJava, level: 85 },
+      { name: 'Express.js', icon: SiExpress, level: 80 },
+      { name: 'Java', icon: FaJava, level: 90 },
       { name: 'C++', icon: SiCplusplus, level: 80 },
-      { name: 'C', icon: SiC, level: 85 },
+      { name: 'C', icon: SiC, level: 80 },
       { name: 'Node.js', icon: SiNodedotjs, level: 60 },
-      { name: 'Flask', icon: SiFlask, level: 60 },
+      { name: 'GoLang', icon: SiGo, level: 80 },
     ],
   },
   {
@@ -42,6 +44,7 @@ const skillCategories = [
     skills: [
       { name: 'SQL', icon: SiPostgresql, level: 85 },
       { name: 'MySQL', icon: SiMysql, level: 85 },
+      { name: 'MongoDB', icon: SiMongodb, level: 75},
       { name: 'GitHub', icon: SiGithub, level: 90 },
       { name: 'DockerHub', icon: SiDocker, level: 75 },
     ],
@@ -59,11 +62,12 @@ const skillCategories = [
     category: 'CS Fundamentals',
     color: '#f97316',
     skills: [
-      { name: 'Data Structures', icon: Layers, level: 65 },
-      { name: 'Algorithms', icon: Binary, level: 65 },
+      { name: 'Data Structures & Algorithms', icon: Layers, level: 65 },
+      { name: 'Design Analysis & Algorithms', icon: Binary, level: 65 },
       { name: 'OOPs', icon: Box, level: 90 },
       { name: 'Operating System', icon: Cpu, level: 75 },
       { name: 'Computer Networking', icon: Network, level: 75 },
+      { name: 'Cryptography', icon: KeyRound, level: 60 }
     ],
   },
 ];

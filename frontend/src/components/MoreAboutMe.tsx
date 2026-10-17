@@ -109,7 +109,13 @@ export default function MoreAboutMe() {
         {
             color: '#060010',
             title: 'Certificate of Merit',
-            description: 'Scored class first in semester examination at National College',
+            description: (
+                <div className="space-y-1">
+                    <p><span className="text-purple-400">✦</span> UG University Rank Holder</p>
+                    <p><span className="text-purple-400">✦</span> Department First / College First</p>
+                    <p><span className="text-purple-400">✦</span> Class 1st in all 6 Semesters</p>
+                </div>
+            ),
             label: 'Honors & Awards',
             icon: <Award size={20} />
         },
