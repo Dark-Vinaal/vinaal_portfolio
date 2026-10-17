@@ -4,7 +4,7 @@ import {
   SiHtml5, SiCss3, SiPostgresql,
   SiGit, SiDocker,
   SiTailwindcss, SiPython,
-  SiCplusplus, SiC, SiFlask, SiBootstrap, SiMysql, SiGithub, SiCanva,
+  SiCplusplus, SiC, SiBootstrap, SiMysql, SiGithub, SiCanva,
   SiExpress, SiGo, SiMongodb
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
