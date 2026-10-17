@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { GraduationCap, School, Award, Languages, Users, Heart } from 'lucide-react';
 import MagicBento from './MagicBento';
 import type { BentoCardData } from './MagicBento';
+import BorderGlow from './BorderGlow';
 
 export default function MoreAboutMe() {
     const [educationLevel, setEducationLevel] = useState<'PG' | 'UG'>('PG');
@@ -68,9 +69,24 @@ export default function MoreAboutMe() {
                         {educationLevel === 'PG' ? 'Post Graduation' : 'Undergraduation'}
                     </p>
                     <p>
-                        {educationLevel === 'PG'
-                            ? 'Master of Science - Computer Science'
-                            : 'Bachelor of Science - Computer Science'}
+                        {educationLevel === 'PG' ? (
+                            'Master of Science - Computer Science'
+                        ) : (
+                            <span className="inline-flex flex-wrap items-center gap-2">
+                                <span>Bachelor of Science - Computer Science</span>
+                                <BorderGlow
+                                    borderRadius={9999}
+                                    colors={['#a855f7', '#1e1b4b', '#f472b6']}
+                                    className="inline-block"
+                                    animated={true}
+                                    alwaysShow={true}
+                                >
+                                    <span className="flex items-center justify-center px-2.5 py-0.5 bg-zinc-950 rounded-full text-xs font-semibold text-purple-300 tracking-wide border border-purple-500/30 shadow-[0_0_12px_rgba(168,85,247,0.4)]">
+                                        University Rank Holder
+                                    </span>
+                                </BorderGlow>
+                            </span>
+                        )}
                     </p>
                 </motion.div>
             ),
