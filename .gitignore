@@ -37,6 +37,15 @@ Thumbs.db
 *.sln
 *.sw?
 
-# Cursor files & temporary downloads
+# Cursor source files & temporary scripts
 *.ani
 *.cur
+extract_ani.py
+
+# Python bytecode and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.venv/
+venv/

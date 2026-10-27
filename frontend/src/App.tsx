@@ -9,10 +9,12 @@ import Contact from './components/Contact';
 import LetsConnect from './components/LetsConnect';
 import Footer from './components/Footer';
 import CustomScrollbar from './components/CustomScrollbar';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <CustomCursor />
       <CustomScrollbar />
       <Navbar />
       <main>
