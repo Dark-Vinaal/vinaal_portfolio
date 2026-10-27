@@ -26,10 +26,8 @@ dist-ssr
 .netlify
 
 # Editor directories and files
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-frontend/.vscode/
+.vscode/
+**/.vscode/
 .idea
 .DS_Store
 Thumbs.db
