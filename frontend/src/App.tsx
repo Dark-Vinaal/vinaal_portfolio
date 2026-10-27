@@ -8,10 +8,12 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import LetsConnect from './components/LetsConnect';
 import Footer from './components/Footer';
+import CustomScrollbar from './components/CustomScrollbar';
 
 function App() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <CustomScrollbar />
       <Navbar />
       <main>
         <Hero />

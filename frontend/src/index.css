@@ -44,6 +44,69 @@
     background: rgba(168, 85, 247, 0.3);
     color: white;
   }
+
+  /* Custom Glowing Rail & ✦ Handle Scrollbar */
+  @media (min-width: 768px) {
+    html,
+    body {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(168, 85, 247, 0.65) transparent;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(196, 181, 253, 0.5);
+      border-radius: 999px;
+    }
+  }
+
+  /* Horizontal scrollbar styling if needed */
+  ::-webkit-scrollbar:horizontal {
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track:horizontal {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(196, 181, 253, 0.5);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  ::-webkit-resizer {
+    background: transparent;
+  }
 }
 
 @layer utilities {
